@@ -9,203 +9,206 @@
 9        android:targetSdkVersion="36" />
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:4:5-67
-11-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:4:22-64
+11-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:5:5-67
+11-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:5:22-64
 12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-12-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:5:5-79
-12-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:5:22-76
+12-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:6:5-79
+12-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:6:22-76
 13    <uses-permission android:name="android.permission.WAKE_LOCK" />
-13-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:6:5-68
-13-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:6:22-65
+13-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:7:5-68
+13-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:7:22-65
 14    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-14-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:7:5-77
-14-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:7:22-74
+14-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:8:5-77
+14-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:8:22-74
 15    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PROJECTION" />
-15-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:8:5-94
-15-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:8:22-91
+15-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:9:5-94
+15-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:9:22-91
 16    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-16-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:9:5-77
-16-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:9:22-74
+16-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:10:5-77
+16-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:10:22-74
 17    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-17-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:10:5-79
-17-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:10:22-76
+17-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:11:5-79
+17-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:11:22-76
 18    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-18-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:11:5-81
-18-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:11:22-78
+18-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:12:5-81
+18-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:12:22-78
 19    <uses-permission android:name="android.permission.CAMERA" />
-19-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:12:5-65
-19-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:12:22-62
+19-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:13:5-65
+19-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:13:22-62
 20    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_CAMERA" />
-20-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:13:5-84
-20-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:13:22-81
-21
-22    <uses-feature
-22-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:14:5-89
-23        android:name="android.hardware.camera.any"
-23-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:14:19-61
-24        android:required="false" />
-24-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:14:62-86
-25
-26    <permission
-26-->[androidx.core:core:1.13.0] /home/kymind/.gradle/caches/8.14.3/transforms/35493b4ccd3f511aa2135b51f52c566f/transformed/core-1.13.0/AndroidManifest.xml:22:5-24:47
-27        android:name="com.devhunts.kiko.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-27-->[androidx.core:core:1.13.0] /home/kymind/.gradle/caches/8.14.3/transforms/35493b4ccd3f511aa2135b51f52c566f/transformed/core-1.13.0/AndroidManifest.xml:23:9-81
-28        android:protectionLevel="signature" />
-28-->[androidx.core:core:1.13.0] /home/kymind/.gradle/caches/8.14.3/transforms/35493b4ccd3f511aa2135b51f52c566f/transformed/core-1.13.0/AndroidManifest.xml:24:9-44
-29
-30    <uses-permission android:name="com.devhunts.kiko.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-30-->[androidx.core:core:1.13.0] /home/kymind/.gradle/caches/8.14.3/transforms/35493b4ccd3f511aa2135b51f52c566f/transformed/core-1.13.0/AndroidManifest.xml:26:5-97
-30-->[androidx.core:core:1.13.0] /home/kymind/.gradle/caches/8.14.3/transforms/35493b4ccd3f511aa2135b51f52c566f/transformed/core-1.13.0/AndroidManifest.xml:26:22-94
-31
-32    <application
-32-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:16:5-59:19
-33        android:allowBackup="false"
-33-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:17:9-36
-34        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-34-->[androidx.core:core:1.13.0] /home/kymind/.gradle/caches/8.14.3/transforms/35493b4ccd3f511aa2135b51f52c566f/transformed/core-1.13.0/AndroidManifest.xml:28:18-86
-35        android:debuggable="true"
-36        android:extractNativeLibs="false"
-37        android:icon="@mipmap/ic_launcher"
-37-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:18:9-43
-38        android:label="@string/app_name"
-38-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:20:9-41
-39        android:roundIcon="@mipmap/ic_launcher_round"
-39-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:19:9-54
-40        android:supportsRtl="true"
-40-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:21:9-35
-41        android:theme="@style/Theme.AppCompat.DayNight" >
-41-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:22:9-56
-42        <activity
-42-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:24:9-31:20
-43            android:name="com.devhunts.remotehp.MainActivity"
-43-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:25:13-41
-44            android:exported="true" >
-44-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:26:13-36
-45            <intent-filter>
-45-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:27:13-30:29
-46                <action android:name="android.intent.action.MAIN" />
-46-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:28:17-69
-46-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:28:25-66
-47
-48                <category android:name="android.intent.category.LAUNCHER" />
-48-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:29:17-77
-48-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:29:27-74
-49            </intent-filter>
-50        </activity>
-51
-52        <service
-52-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:33:9-36:70
-53            android:name="com.devhunts.remotehp.ControlService"
-53-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:34:13-43
-54            android:exported="false"
-54-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:35:13-37
-55            android:foregroundServiceType="mediaProjection|camera" />
-55-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:36:13-67
-56        <service
-56-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:38:9-48:19
-57            android:name="com.devhunts.remotehp.InputAccessibilityService"
-57-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:39:13-54
-58            android:exported="false"
-58-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:40:13-37
-59            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE" >
-59-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:41:13-79
-60            <intent-filter>
-60-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:42:13-44:29
-61                <action android:name="android.accessibilityservice.AccessibilityService" />
-61-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:43:17-92
-61-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:43:25-89
-62            </intent-filter>
-63
-64            <meta-data
-64-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:45:13-47:64
-65                android:name="android.accessibilityservice"
-65-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:46:17-60
-66                android:resource="@xml/accessibility_config" />
-66-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:47:17-61
-67        </service>
-68        <service
-68-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:50:9-58:19
-69            android:name="com.devhunts.remotehp.NotifListener"
-69-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:51:13-42
-70            android:exported="false"
-70-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:52:13-37
-71            android:label="@string/app_name"
-71-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:53:13-45
-72            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" >
-72-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:54:13-87
-73            <intent-filter>
-73-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:55:13-57:29
-74                <action android:name="android.service.notification.NotificationListenerService" />
-74-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:56:17-99
-74-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:56:25-96
-75            </intent-filter>
-76        </service>
-77
-78        <provider
-78-->[androidx.emoji2:emoji2:1.3.0] /home/kymind/.gradle/caches/8.14.3/transforms/3b6c150766052c617ae6d19d07223941/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
-79            android:name="androidx.startup.InitializationProvider"
-79-->[androidx.emoji2:emoji2:1.3.0] /home/kymind/.gradle/caches/8.14.3/transforms/3b6c150766052c617ae6d19d07223941/transformed/emoji2-1.3.0/AndroidManifest.xml:25:13-67
-80            android:authorities="com.devhunts.kiko.androidx-startup"
-80-->[androidx.emoji2:emoji2:1.3.0] /home/kymind/.gradle/caches/8.14.3/transforms/3b6c150766052c617ae6d19d07223941/transformed/emoji2-1.3.0/AndroidManifest.xml:26:13-68
-81            android:exported="false" >
-81-->[androidx.emoji2:emoji2:1.3.0] /home/kymind/.gradle/caches/8.14.3/transforms/3b6c150766052c617ae6d19d07223941/transformed/emoji2-1.3.0/AndroidManifest.xml:27:13-37
-82            <meta-data
-82-->[androidx.emoji2:emoji2:1.3.0] /home/kymind/.gradle/caches/8.14.3/transforms/3b6c150766052c617ae6d19d07223941/transformed/emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
-83                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-83-->[androidx.emoji2:emoji2:1.3.0] /home/kymind/.gradle/caches/8.14.3/transforms/3b6c150766052c617ae6d19d07223941/transformed/emoji2-1.3.0/AndroidManifest.xml:30:17-75
-84                android:value="androidx.startup" />
-84-->[androidx.emoji2:emoji2:1.3.0] /home/kymind/.gradle/caches/8.14.3/transforms/3b6c150766052c617ae6d19d07223941/transformed/emoji2-1.3.0/AndroidManifest.xml:31:17-49
-85            <meta-data
-85-->[androidx.lifecycle:lifecycle-process:2.6.2] /home/kymind/.gradle/caches/8.14.3/transforms/d4bf223fd655823fa77b32c8e81c849e/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:29:13-31:52
-86                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-86-->[androidx.lifecycle:lifecycle-process:2.6.2] /home/kymind/.gradle/caches/8.14.3/transforms/d4bf223fd655823fa77b32c8e81c849e/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:30:17-78
-87                android:value="androidx.startup" />
-87-->[androidx.lifecycle:lifecycle-process:2.6.2] /home/kymind/.gradle/caches/8.14.3/transforms/d4bf223fd655823fa77b32c8e81c849e/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:31:17-49
-88            <meta-data
-88-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kymind/.gradle/caches/8.14.3/transforms/668d06cd0ab7ad893af52a7f826da46d/transformed/profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
-89                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-89-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kymind/.gradle/caches/8.14.3/transforms/668d06cd0ab7ad893af52a7f826da46d/transformed/profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
-90                android:value="androidx.startup" />
-90-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kymind/.gradle/caches/8.14.3/transforms/668d06cd0ab7ad893af52a7f826da46d/transformed/profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
-91        </provider>
-92
-93        <receiver
-93-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kymind/.gradle/caches/8.14.3/transforms/668d06cd0ab7ad893af52a7f826da46d/transformed/profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
-94            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-94-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kymind/.gradle/caches/8.14.3/transforms/668d06cd0ab7ad893af52a7f826da46d/transformed/profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
-95            android:directBootAware="false"
-95-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kymind/.gradle/caches/8.14.3/transforms/668d06cd0ab7ad893af52a7f826da46d/transformed/profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
-96            android:enabled="true"
-96-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kymind/.gradle/caches/8.14.3/transforms/668d06cd0ab7ad893af52a7f826da46d/transformed/profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
-97            android:exported="true"
-97-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kymind/.gradle/caches/8.14.3/transforms/668d06cd0ab7ad893af52a7f826da46d/transformed/profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
-98            android:permission="android.permission.DUMP" >
-98-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kymind/.gradle/caches/8.14.3/transforms/668d06cd0ab7ad893af52a7f826da46d/transformed/profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
-99            <intent-filter>
-99-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kymind/.gradle/caches/8.14.3/transforms/668d06cd0ab7ad893af52a7f826da46d/transformed/profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
-100                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-100-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kymind/.gradle/caches/8.14.3/transforms/668d06cd0ab7ad893af52a7f826da46d/transformed/profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
-100-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kymind/.gradle/caches/8.14.3/transforms/668d06cd0ab7ad893af52a7f826da46d/transformed/profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
-101            </intent-filter>
-102            <intent-filter>
-102-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kymind/.gradle/caches/8.14.3/transforms/668d06cd0ab7ad893af52a7f826da46d/transformed/profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
-103                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-103-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kymind/.gradle/caches/8.14.3/transforms/668d06cd0ab7ad893af52a7f826da46d/transformed/profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
-103-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kymind/.gradle/caches/8.14.3/transforms/668d06cd0ab7ad893af52a7f826da46d/transformed/profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
-104            </intent-filter>
-105            <intent-filter>
-105-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kymind/.gradle/caches/8.14.3/transforms/668d06cd0ab7ad893af52a7f826da46d/transformed/profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
-106                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-106-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kymind/.gradle/caches/8.14.3/transforms/668d06cd0ab7ad893af52a7f826da46d/transformed/profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
-106-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kymind/.gradle/caches/8.14.3/transforms/668d06cd0ab7ad893af52a7f826da46d/transformed/profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
-107            </intent-filter>
-108            <intent-filter>
-108-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kymind/.gradle/caches/8.14.3/transforms/668d06cd0ab7ad893af52a7f826da46d/transformed/profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
-109                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-109-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kymind/.gradle/caches/8.14.3/transforms/668d06cd0ab7ad893af52a7f826da46d/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
-109-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kymind/.gradle/caches/8.14.3/transforms/668d06cd0ab7ad893af52a7f826da46d/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
-110            </intent-filter>
-111        </receiver>
-112    </application>
-113
-114</manifest>
+20-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:14:5-84
+20-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:14:22-81
+21    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" />
+21-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:15:5-17:47
+21-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:16:9-62
+22
+23    <uses-feature
+23-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:18:5-89
+24        android:name="android.hardware.camera.any"
+24-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:18:19-61
+25        android:required="false" />
+25-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:18:62-86
+26
+27    <permission
+27-->[androidx.core:core:1.13.0] /home/kymind/.gradle/caches/8.14.3/transforms/35493b4ccd3f511aa2135b51f52c566f/transformed/core-1.13.0/AndroidManifest.xml:22:5-24:47
+28        android:name="com.devhunts.kiko.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+28-->[androidx.core:core:1.13.0] /home/kymind/.gradle/caches/8.14.3/transforms/35493b4ccd3f511aa2135b51f52c566f/transformed/core-1.13.0/AndroidManifest.xml:23:9-81
+29        android:protectionLevel="signature" />
+29-->[androidx.core:core:1.13.0] /home/kymind/.gradle/caches/8.14.3/transforms/35493b4ccd3f511aa2135b51f52c566f/transformed/core-1.13.0/AndroidManifest.xml:24:9-44
+30
+31    <uses-permission android:name="com.devhunts.kiko.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+31-->[androidx.core:core:1.13.0] /home/kymind/.gradle/caches/8.14.3/transforms/35493b4ccd3f511aa2135b51f52c566f/transformed/core-1.13.0/AndroidManifest.xml:26:5-97
+31-->[androidx.core:core:1.13.0] /home/kymind/.gradle/caches/8.14.3/transforms/35493b4ccd3f511aa2135b51f52c566f/transformed/core-1.13.0/AndroidManifest.xml:26:22-94
+32
+33    <application
+33-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:20:5-63:19
+34        android:allowBackup="false"
+34-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:21:9-36
+35        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+35-->[androidx.core:core:1.13.0] /home/kymind/.gradle/caches/8.14.3/transforms/35493b4ccd3f511aa2135b51f52c566f/transformed/core-1.13.0/AndroidManifest.xml:28:18-86
+36        android:debuggable="true"
+37        android:extractNativeLibs="false"
+38        android:icon="@mipmap/ic_launcher"
+38-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:22:9-43
+39        android:label="@string/app_name"
+39-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:24:9-41
+40        android:roundIcon="@mipmap/ic_launcher_round"
+40-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:23:9-54
+41        android:supportsRtl="true"
+41-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:25:9-35
+42        android:theme="@style/Theme.AppCompat.DayNight" >
+42-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:26:9-56
+43        <activity
+43-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:28:9-35:20
+44            android:name="com.devhunts.remotehp.MainActivity"
+44-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:29:13-41
+45            android:exported="true" >
+45-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:30:13-36
+46            <intent-filter>
+46-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:31:13-34:29
+47                <action android:name="android.intent.action.MAIN" />
+47-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:32:17-69
+47-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:32:25-66
+48
+49                <category android:name="android.intent.category.LAUNCHER" />
+49-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:33:17-77
+49-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:33:27-74
+50            </intent-filter>
+51        </activity>
+52
+53        <service
+53-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:37:9-40:70
+54            android:name="com.devhunts.remotehp.ControlService"
+54-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:38:13-43
+55            android:exported="false"
+55-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:39:13-37
+56            android:foregroundServiceType="mediaProjection|camera" />
+56-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:40:13-67
+57        <service
+57-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:42:9-52:19
+58            android:name="com.devhunts.remotehp.InputAccessibilityService"
+58-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:43:13-54
+59            android:exported="false"
+59-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:44:13-37
+60            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE" >
+60-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:45:13-79
+61            <intent-filter>
+61-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:46:13-48:29
+62                <action android:name="android.accessibilityservice.AccessibilityService" />
+62-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:47:17-92
+62-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:47:25-89
+63            </intent-filter>
+64
+65            <meta-data
+65-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:49:13-51:64
+66                android:name="android.accessibilityservice"
+66-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:50:17-60
+67                android:resource="@xml/accessibility_config" />
+67-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:51:17-61
+68        </service>
+69        <service
+69-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:54:9-62:19
+70            android:name="com.devhunts.remotehp.NotifListener"
+70-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:55:13-42
+71            android:exported="false"
+71-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:56:13-37
+72            android:label="@string/app_name"
+72-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:57:13-45
+73            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" >
+73-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:58:13-87
+74            <intent-filter>
+74-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:59:13-61:29
+75                <action android:name="android.service.notification.NotificationListenerService" />
+75-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:60:17-99
+75-->/home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:60:25-96
+76            </intent-filter>
+77        </service>
+78
+79        <provider
+79-->[androidx.emoji2:emoji2:1.3.0] /home/kymind/.gradle/caches/8.14.3/transforms/3b6c150766052c617ae6d19d07223941/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
+80            android:name="androidx.startup.InitializationProvider"
+80-->[androidx.emoji2:emoji2:1.3.0] /home/kymind/.gradle/caches/8.14.3/transforms/3b6c150766052c617ae6d19d07223941/transformed/emoji2-1.3.0/AndroidManifest.xml:25:13-67
+81            android:authorities="com.devhunts.kiko.androidx-startup"
+81-->[androidx.emoji2:emoji2:1.3.0] /home/kymind/.gradle/caches/8.14.3/transforms/3b6c150766052c617ae6d19d07223941/transformed/emoji2-1.3.0/AndroidManifest.xml:26:13-68
+82            android:exported="false" >
+82-->[androidx.emoji2:emoji2:1.3.0] /home/kymind/.gradle/caches/8.14.3/transforms/3b6c150766052c617ae6d19d07223941/transformed/emoji2-1.3.0/AndroidManifest.xml:27:13-37
+83            <meta-data
+83-->[androidx.emoji2:emoji2:1.3.0] /home/kymind/.gradle/caches/8.14.3/transforms/3b6c150766052c617ae6d19d07223941/transformed/emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
+84                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+84-->[androidx.emoji2:emoji2:1.3.0] /home/kymind/.gradle/caches/8.14.3/transforms/3b6c150766052c617ae6d19d07223941/transformed/emoji2-1.3.0/AndroidManifest.xml:30:17-75
+85                android:value="androidx.startup" />
+85-->[androidx.emoji2:emoji2:1.3.0] /home/kymind/.gradle/caches/8.14.3/transforms/3b6c150766052c617ae6d19d07223941/transformed/emoji2-1.3.0/AndroidManifest.xml:31:17-49
+86            <meta-data
+86-->[androidx.lifecycle:lifecycle-process:2.6.2] /home/kymind/.gradle/caches/8.14.3/transforms/d4bf223fd655823fa77b32c8e81c849e/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:29:13-31:52
+87                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+87-->[androidx.lifecycle:lifecycle-process:2.6.2] /home/kymind/.gradle/caches/8.14.3/transforms/d4bf223fd655823fa77b32c8e81c849e/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:30:17-78
+88                android:value="androidx.startup" />
+88-->[androidx.lifecycle:lifecycle-process:2.6.2] /home/kymind/.gradle/caches/8.14.3/transforms/d4bf223fd655823fa77b32c8e81c849e/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:31:17-49
+89            <meta-data
+89-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kymind/.gradle/caches/8.14.3/transforms/668d06cd0ab7ad893af52a7f826da46d/transformed/profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
+90                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+90-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kymind/.gradle/caches/8.14.3/transforms/668d06cd0ab7ad893af52a7f826da46d/transformed/profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
+91                android:value="androidx.startup" />
+91-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kymind/.gradle/caches/8.14.3/transforms/668d06cd0ab7ad893af52a7f826da46d/transformed/profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
+92        </provider>
+93
+94        <receiver
+94-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kymind/.gradle/caches/8.14.3/transforms/668d06cd0ab7ad893af52a7f826da46d/transformed/profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
+95            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+95-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kymind/.gradle/caches/8.14.3/transforms/668d06cd0ab7ad893af52a7f826da46d/transformed/profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
+96            android:directBootAware="false"
+96-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kymind/.gradle/caches/8.14.3/transforms/668d06cd0ab7ad893af52a7f826da46d/transformed/profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
+97            android:enabled="true"
+97-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kymind/.gradle/caches/8.14.3/transforms/668d06cd0ab7ad893af52a7f826da46d/transformed/profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
+98            android:exported="true"
+98-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kymind/.gradle/caches/8.14.3/transforms/668d06cd0ab7ad893af52a7f826da46d/transformed/profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
+99            android:permission="android.permission.DUMP" >
+99-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kymind/.gradle/caches/8.14.3/transforms/668d06cd0ab7ad893af52a7f826da46d/transformed/profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
+100            <intent-filter>
+100-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kymind/.gradle/caches/8.14.3/transforms/668d06cd0ab7ad893af52a7f826da46d/transformed/profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
+101                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+101-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kymind/.gradle/caches/8.14.3/transforms/668d06cd0ab7ad893af52a7f826da46d/transformed/profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
+101-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kymind/.gradle/caches/8.14.3/transforms/668d06cd0ab7ad893af52a7f826da46d/transformed/profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
+102            </intent-filter>
+103            <intent-filter>
+103-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kymind/.gradle/caches/8.14.3/transforms/668d06cd0ab7ad893af52a7f826da46d/transformed/profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
+104                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+104-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kymind/.gradle/caches/8.14.3/transforms/668d06cd0ab7ad893af52a7f826da46d/transformed/profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
+104-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kymind/.gradle/caches/8.14.3/transforms/668d06cd0ab7ad893af52a7f826da46d/transformed/profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
+105            </intent-filter>
+106            <intent-filter>
+106-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kymind/.gradle/caches/8.14.3/transforms/668d06cd0ab7ad893af52a7f826da46d/transformed/profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
+107                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+107-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kymind/.gradle/caches/8.14.3/transforms/668d06cd0ab7ad893af52a7f826da46d/transformed/profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
+107-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kymind/.gradle/caches/8.14.3/transforms/668d06cd0ab7ad893af52a7f826da46d/transformed/profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
+108            </intent-filter>
+109            <intent-filter>
+109-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kymind/.gradle/caches/8.14.3/transforms/668d06cd0ab7ad893af52a7f826da46d/transformed/profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
+110                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+110-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kymind/.gradle/caches/8.14.3/transforms/668d06cd0ab7ad893af52a7f826da46d/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
+110-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kymind/.gradle/caches/8.14.3/transforms/668d06cd0ab7ad893af52a7f826da46d/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
+111            </intent-filter>
+112        </receiver>
+113    </application>
+114
+115</manifest>

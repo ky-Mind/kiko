@@ -58,6 +58,12 @@ class InputAccessibilityService : AccessibilityService() {
         performGlobalAction(action)
     }
 
+    fun lockScreen(): Boolean {
+        return if (android.os.Build.VERSION.SDK_INT >= 28)
+            performGlobalAction(GLOBAL_ACTION_LOCK_SCREEN)
+        else false
+    }
+
     fun typeText(s: String) {
         val node: AccessibilityNodeInfo = findFocus(AccessibilityNodeInfo.FOCUS_INPUT) ?: return
         val args = Bundle().apply {

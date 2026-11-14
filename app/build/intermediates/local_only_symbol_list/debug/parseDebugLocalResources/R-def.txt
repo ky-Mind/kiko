@@ -5,6 +5,7 @@ id btnAccessibility
 id btnNotif
 id btnStart
 id btnStop
+id btnUsage
 id status
 layout activity_main
 mipmap ic_launcher

@@ -182,8 +182,28 @@
         </section>
 
         <section class="panel">
-          <div class="hd"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Screen time <span class="tag">SEGERA</span></div>
-          <div class="bd"><div class="sub">Pemakaian aplikasi &amp; batas waktu.</div></div>
+          <div class="hd"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Screen time <span class="tag">LIVE</span></div>
+          <div class="bd">
+            <div class="list" id="usageList">
+              <div class="empty">Aktifkan "Usage access" di app kiko untuk lihat screen time.</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel" style="grid-column:1/-1">
+          <div class="hd"><svg viewBox="0 0 24 24"><path d="M7 11V8a5 5 0 0 1 10 0v3"/><rect x="5" y="11" width="14" height="9" rx="2"/></svg> Perintah</div>
+          <div class="bd">
+            <div style="margin-bottom:10px"><button id="cmdLock" style="padding:9px 16px;border-radius:8px;border:1px solid var(--line);background:var(--panel2);color:var(--txt);cursor:pointer">Kunci HP</button></div>
+            <div class="typerow" style="margin-bottom:8px">
+              <select id="appSel" style="flex:1;background:#0f1115;border:1px solid var(--line);color:var(--txt);border-radius:8px;padding:9px 11px;font-size:13px"></select>
+              <button id="cmdOpen">Buka</button>
+            </div>
+            <div class="typerow">
+              <input id="msgIn" placeholder="Pesan untuk tampil di HP…">
+              <button id="cmdMsg">Kirim</button>
+            </div>
+            <div class="sub" id="cmdInfo" style="margin-top:8px"></div>
+          </div>
         </section>
       </div>
     </div>
@@ -289,6 +309,34 @@
   }
   document.getElementById('camBack').addEventListener('click',()=>snap('back'));
   document.getElementById('camFront').addEventListener('click',()=>snap('front'));
+
+  // --- screen time ---
+  const usageList=document.getElementById('usageList');
+  function fmtDur(ms){ const m=Math.round(ms/60000); if(m<1) return '<1 mnt'; if(m<60) return m+' mnt'; return Math.floor(m/60)+' j '+(m%60)+' m'; }
+  async function pollUsage(){
+    try{
+      const r=await fetch('/usage',{cache:'no-store'}); const a=await r.json();
+      if(!Array.isArray(a)||a.length===0){
+        usageList.innerHTML='<div class="empty">Aktifkan "Usage access" di app kiko untuk lihat screen time.</div>';
+      }else{
+        usageList.innerHTML=a.slice(0,8).map(x=>'<div class="row"><div class="ic">'+esc((x.app||'?').trim().slice(0,1).toUpperCase())+'</div><div style="min-width:0"><b>'+esc(x.app)+'</b><small>'+fmtDur(x.ms)+' · hari ini</small></div></div>').join('');
+      }
+    }catch(e){}
+    setTimeout(pollUsage,15000);
+  }
+  pollUsage();
+
+  // --- perintah ---
+  const appSel=document.getElementById('appSel'), cmdInfo=document.getElementById('cmdInfo'), msgIn=document.getElementById('msgIn');
+  async function loadApps(){ try{ const r=await fetch('/apps'); const a=await r.json();
+    if(Array.isArray(a)) appSel.innerHTML=a.map(x=>'<option value="'+esc(x.pkg)+'">'+esc(x.app)+'</option>').join(''); }catch(e){} }
+  async function doCmd(q,label){ cmdInfo.textContent=label+'…';
+    try{ const r=await fetch('/cmd?'+q); const j=await r.json(); cmdInfo.textContent=label+(j.ok?' — berhasil':' — gagal (cek izin Accessibility)'); }
+    catch(e){ cmdInfo.textContent=label+' — gagal'; } }
+  document.getElementById('cmdLock').addEventListener('click',()=>doCmd('do=lock','Kunci HP'));
+  document.getElementById('cmdOpen').addEventListener('click',()=>{ if(appSel.value) doCmd('do=open&pkg='+encodeURIComponent(appSel.value),'Buka app'); });
+  document.getElementById('cmdMsg').addEventListener('click',()=>{ if(msgIn.value){ doCmd('do=message&text='+encodeURIComponent(msgIn.value),'Kirim pesan'); msgIn.value=''; } });
+  loadApps();
 })();
 </script>
 </body>

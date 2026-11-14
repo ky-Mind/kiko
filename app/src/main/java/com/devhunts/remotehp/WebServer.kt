@@ -44,6 +44,22 @@ class WebServer(
                     "kamera tidak tersedia / izin belum diberikan")
             }
         }
+        if (appCtx != null) {
+            when (session.uri) {
+                "/usage" -> {
+                    val r = newFixedLengthResponse(Response.Status.OK, "application/json", DeviceOps.usage(appCtx))
+                    r.addHeader("Cache-Control", "no-store"); return r
+                }
+                "/apps" -> {
+                    val r = newFixedLengthResponse(Response.Status.OK, "application/json", DeviceOps.apps(appCtx))
+                    r.addHeader("Cache-Control", "no-store"); return r
+                }
+                "/cmd" -> {
+                    val ok = DeviceOps.cmd(appCtx, session.parameters["do"]?.firstOrNull(), session.parameters)
+                    return newFixedLengthResponse(Response.Status.OK, "application/json", "{\"ok\":$ok}")
+                }
+            }
+        }
         return newFixedLengthResponse(
             Response.Status.OK,
             "text/html",
