@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "com.devhunts.remotehp.app-release-23:/xml_accessibility_config.xml.flat",
+        "source": "com.devhunts.remotehp.app-main-24:/xml/accessibility_config.xml"
+    },
+    {
+        "merged": "com.devhunts.remotehp.app-release-23:/layout_activity_main.xml.flat",
+        "source": "com.devhunts.remotehp.app-main-24:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.devhunts.remotehp.app-release-23:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.devhunts.remotehp.app-main-24:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.devhunts.remotehp.app-release-23:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.devhunts.remotehp.app-main-24:/mipmap-xxxhdpi/ic_launcher_round.png"
+    }
+]

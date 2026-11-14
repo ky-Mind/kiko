@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="accessibility_desc">Mengizinkan kontrol sentuhan jarak jauh (tap, geser, ketik) untuk perangkat milik Anda sendiri.</string>
+    <string name="app_name">kiko</string>
+</resources>

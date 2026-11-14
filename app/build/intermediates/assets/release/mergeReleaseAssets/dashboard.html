@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>kiko</title>
+<style>
+  :root{
+    --bg:#0f1115; --panel:#15171d; --panel2:#1a1d24; --line:#23262f;
+    --txt:#e7e9ee; --mut:#878d9b; --faint:#5b616e;
+    --acc:#e8632e;
+    --radius:12px;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{margin:0;background:var(--bg);color:var(--txt);
+    font-family:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+    font-size:14px;-webkit-font-smoothing:antialiased;display:flex}
+  svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.6;
+    stroke-linecap:round;stroke-linejoin:round;flex:none}
+  /* scrollbar tipis & tenang */
+  *{scrollbar-width:thin;scrollbar-color:#2a2e38 transparent}
+  ::-webkit-scrollbar{width:9px;height:9px}
+  ::-webkit-scrollbar-track{background:transparent}
+  ::-webkit-scrollbar-thumb{background:#262a33;border-radius:10px;border:2px solid var(--bg)}
+  ::-webkit-scrollbar-thumb:hover{background:#333843}
+
+  /* Sidebar */
+  aside{width:216px;flex:none;border-right:1px solid var(--line);
+    background:var(--panel);display:flex;flex-direction:column;height:100vh;position:sticky;top:0}
+  .brand{display:flex;align-items:center;gap:10px;padding:18px 18px 16px}
+  .brand img{width:30px;height:30px;border-radius:8px;object-fit:cover;image-rendering:pixelated;background:#000}
+  .brand b{font-size:15px;letter-spacing:.2px}
+  .brand span{display:block;font-size:10px;color:var(--faint);letter-spacing:1.5px;font-weight:600;margin-top:1px}
+  nav{padding:6px}
+  nav a{display:flex;align-items:center;gap:11px;padding:9px 11px;border-radius:9px;
+    color:var(--mut);text-decoration:none;font-weight:500;margin-bottom:1px;cursor:pointer}
+  nav a:hover{background:var(--panel2);color:var(--txt)}
+  nav a.on{background:var(--panel2);color:var(--txt)}
+  nav a.on svg{color:var(--acc)}
+  .side-foot{margin-top:auto;padding:14px 18px;font-size:11px;color:var(--faint);border-top:1px solid var(--line)}
+
+  /* Main */
+  main{flex:1;min-width:0;height:100vh;overflow:auto}
+  .top{display:flex;align-items:center;gap:14px;padding:16px 24px;border-bottom:1px solid var(--line);
+    position:sticky;top:0;background:rgba(15,17,21,.85);backdrop-filter:blur(8px);z-index:5}
+  .top h1{font-size:16px;margin:0;font-weight:600}
+  .dev{display:flex;align-items:center;gap:9px;margin-left:auto;color:var(--mut);font-size:13px}
+  .conn{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:500;
+    padding:5px 10px;border-radius:7px;border:1px solid var(--line);color:var(--mut)}
+  .conn .d{width:7px;height:7px;border-radius:50%;background:var(--faint)}
+  .conn.ok{color:#58c38a;border-color:#2b4639} .conn.ok .d{background:#58c38a}
+  .conn.no{color:#d9694f;border-color:#49322c} .conn.no .d{background:#d9694f}
+
+  .body{padding:24px;display:grid;grid-template-columns:340px 1fr;gap:20px;align-items:start}
+  @media(max-width:860px){.body{grid-template-columns:1fr}}
+
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius)}
+  .panel .hd{display:flex;align-items:center;gap:9px;padding:13px 15px;border-bottom:1px solid var(--line);
+    font-weight:600;font-size:13px}
+  .panel .hd svg{color:var(--mut)}
+  .panel .hd .tag{margin-left:auto;font-size:10px;font-weight:600;letter-spacing:.5px;
+    color:var(--faint);border:1px solid var(--line);padding:2px 7px;border-radius:5px}
+  .panel .bd{padding:15px}
+
+  /* phone */
+  #screen{display:block;width:100%;max-height:68vh;object-fit:contain;background:#000;
+    border-radius:8px;cursor:crosshair;touch-action:none;user-select:none}
+  .ctl{display:flex;gap:7px;margin-top:12px}
+  .ctl button{flex:1;display:grid;place-items:center;padding:9px;border-radius:8px;
+    border:1px solid var(--line);background:var(--panel2);color:var(--mut);cursor:pointer}
+  .ctl button:hover{color:var(--txt);border-color:#30343f}
+  .typerow{display:flex;gap:8px;margin-top:8px}
+  .typerow input{flex:1;background:#0f1115;border:1px solid var(--line);color:var(--txt);
+    border-radius:8px;padding:9px 11px;font-size:13px;outline:none}
+  .typerow input:focus{border-color:#32363f}
+  .typerow button{background:var(--acc);border:none;color:#fff;border-radius:8px;padding:9px 16px;font-weight:600;cursor:pointer}
+
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  @media(max-width:560px){.cards{grid-template-columns:1fr}}
+  .kpi{font-size:30px;font-weight:700;letter-spacing:-.5px}
+  .kpi span{font-size:14px;color:var(--mut);font-weight:500}
+  .sub{color:var(--mut);font-size:12.5px;line-height:1.55;margin-top:6px}
+  .track{height:6px;border-radius:4px;background:#0f1115;border:1px solid var(--line);margin-top:12px;overflow:hidden}
+  .track>i{display:block;height:100%;background:var(--acc)}
+  .map{height:116px;border-radius:8px;border:1px solid var(--line);position:relative;overflow:hidden;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:24px 24px;background-color:#101218}
+  .map .mk{position:absolute;left:58%;top:52%;width:10px;height:10px;border-radius:50%;
+    background:var(--acc);box-shadow:0 0 0 4px rgba(232,99,46,.2);transform:translate(-50%,-50%)}
+  .list{display:flex;flex-direction:column}
+  .list .row{display:flex;align-items:center;gap:11px;padding:10px 0;border-top:1px solid var(--line)}
+  .list .row:first-child{border-top:none}
+  .list .ic{width:30px;height:30px;border-radius:8px;flex:none;display:grid;place-items:center;
+    background:var(--panel2);color:var(--mut)}
+  .list .row b{font-weight:600;font-size:13px}
+  .list .row small{display:block;color:var(--faint);font-size:11.5px}
+  .empty{color:var(--faint);font-size:12.5px;padding:4px 0}
+</style>
+</head>
+<body>
+  <aside>
+    <div class="brand">
+      <img src="logo.png" alt="">
+      <div><b>kiko</b><span>REMOTE &amp; MONITOR</span></div>
+    </div>
+    <nav>
+      <a class="on"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="11" y1="18" x2="13" y2="18"/></svg> Layar</a>
+      <a><svg viewBox="0 0 24 24"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> Lokasi</a>
+      <a><svg viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 7 3 9H3c0-2 3-2 3-9z"/><path d="M10 21a2 2 0 0 0 4 0"/></svg> Notifikasi</a>
+      <a><svg viewBox="0 0 24 24"><path d="M3 7h3l2-2h8l2 2h3v12H3z"/><circle cx="12" cy="13" r="3.5"/></svg> Kamera</a>
+      <a><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Screen time</a>
+    </nav>
+    <div class="side-foot">Privat lewat Tailscale.<br>Bukan afiliasi produk mana pun.</div>
+  </aside>
+
+  <main>
+    <div class="top">
+      <h1>Layar</h1>
+      <div class="dev" id="devName">Perangkat</div>
+      <span class="conn" id="conn"><span class="d"></span>menyambung…</span>
+    </div>
+
+    <div class="body">
+      <section class="panel">
+        <div class="hd">
+          <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
+          Layar langsung <span class="tag">LIVE</span>
+        </div>
+        <div class="bd">
+          <img id="screen" alt="layar perangkat">
+          <div class="ctl">
+            <button data-key="back" title="Kembali"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
+            <button data-key="home" title="Beranda"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/></svg></button>
+            <button data-key="recents" title="Terakhir"><svg viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="1.5"/></svg></button>
+            <button data-key="notifications" title="Notifikasi"><svg viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 7 3 9H3c0-2 3-2 3-9z"/><path d="M10 21a2 2 0 0 0 4 0"/></svg></button>
+          </div>
+          <div class="typerow">
+            <input id="txt" placeholder="Ketik teks ke perangkat…">
+            <button id="sendTxt">Kirim</button>
+          </div>
+        </div>
+      </section>
+
+      <div class="cards">
+        <section class="panel">
+          <div class="hd"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="18" height="10" rx="2"/><line x1="22" y1="11" x2="22" y2="13"/></svg> Baterai <span class="tag">LIVE</span></div>
+          <div class="bd">
+            <div class="kpi" id="batt">—<span>%</span></div>
+            <div class="track"><i id="battBar" style="width:0%"></i></div>
+            <div class="sub" id="battInfo">Menunggu data perangkat.</div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="hd"><svg viewBox="0 0 24 24"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> Lokasi <span class="tag">LIVE</span></div>
+          <div class="bd">
+            <div class="map"><div class="mk"></div></div>
+            <div class="sub" id="locInfo">Menunggu fix lokasi…</div>
+          </div>
+        </section>
+
+        <section class="panel" style="grid-column:1/-1">
+          <div class="hd"><svg viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 7 3 9H3c0-2 3-2 3-9z"/><path d="M10 21a2 2 0 0 0 4 0"/></svg> Notifikasi masuk <span class="tag">LIVE</span></div>
+          <div class="bd">
+            <div class="list" id="notifFeed">
+              <div class="empty">Menunggu notifikasi… aktifkan "Akses notifikasi" di app kiko.</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="hd"><svg viewBox="0 0 24 24"><path d="M3 7h3l2-2h8l2 2h3v12H3z"/><circle cx="12" cy="13" r="3.5"/></svg> Kamera <span class="tag">LIVE</span></div>
+          <div class="bd">
+            <div class="ctl" style="margin-top:0;margin-bottom:10px">
+              <button id="camBack">Belakang</button>
+              <button id="camFront">Depan</button>
+            </div>
+            <img id="camImg" alt="" style="width:100%;border-radius:8px;border:1px solid var(--line);display:none;margin-bottom:8px">
+            <div class="sub" id="camInfo">Ambil snapshot kamera (butuh izin kamera di app).</div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="hd"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Screen time <span class="tag">LIVE</span></div>
+          <div class="bd">
+            <div class="list" id="usageList">
+              <div class="empty">Aktifkan "Usage access" di app kiko untuk lihat screen time.</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel" style="grid-column:1/-1">
+          <div class="hd"><svg viewBox="0 0 24 24"><path d="M7 11V8a5 5 0 0 1 10 0v3"/><rect x="5" y="11" width="14" height="9" rx="2"/></svg> Perintah</div>
+          <div class="bd">
+            <div style="margin-bottom:10px"><button id="cmdLock" style="padding:9px 16px;border-radius:8px;border:1px solid var(--line);background:var(--panel2);color:var(--txt);cursor:pointer">Kunci HP</button></div>
+            <div class="typerow" style="margin-bottom:8px">
+              <select id="appSel" style="flex:1;background:#0f1115;border:1px solid var(--line);color:var(--txt);border-radius:8px;padding:9px 11px;font-size:13px"></select>
+              <button id="cmdOpen">Buka</button>
+            </div>
+            <div class="typerow">
+              <input id="msgIn" placeholder="Pesan untuk tampil di HP…">
+              <button id="cmdMsg">Kirim</button>
+            </div>
+            <div class="sub" id="cmdInfo" style="margin-top:8px"></div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+<script>
+(function () {
+  const img=document.getElementById('screen'), conn=document.getElementById('conn'), txtEl=document.getElementById('txt');
+  let ws=null, drag=null, lastUrl=null;
+  function setConn(s,t){ conn.className='conn '+s; conn.innerHTML='<span class="d"></span>'+t; }
+  function connect(){
+    ws=new WebSocket('ws://'+location.host+'/'); ws.binaryType='blob';
+    ws.onopen=()=>setConn('ok','Tersambung');
+    ws.onclose=()=>{setConn('no','Terputus — menyambung ulang');setTimeout(connect,1500);};
+    ws.onerror=()=>{try{ws.close()}catch(e){}};
+    ws.onmessage=e=>{ if(e.data instanceof Blob){ const u=URL.createObjectURL(e.data); img.src=u; if(lastUrl)URL.revokeObjectURL(lastUrl); lastUrl=u; } };
+  }
+  function send(o){ if(ws&&ws.readyState===1) ws.send(JSON.stringify(o)); }
+  function norm(ev){ const r=img.getBoundingClientRect();
+    return {x:Math.min(1,Math.max(0,(ev.clientX-r.left)/r.width)), y:Math.min(1,Math.max(0,(ev.clientY-r.top)/r.height))}; }
+  img.addEventListener('mousedown',e=>{drag=Object.assign(norm(e),{t:Date.now()});e.preventDefault();});
+  img.addEventListener('mouseup',e=>{ if(!drag)return; const p=norm(e),dt=Date.now()-drag.t,dist=Math.hypot(p.x-drag.x,p.y-drag.y);
+    if(dist<0.02) send({type:'tap',x:p.x,y:p.y});
+    else send({type:'swipe',x1:drag.x,y1:drag.y,x2:p.x,y2:p.y,ms:Math.max(60,Math.min(dt,1200))}); drag=null; });
+  document.querySelectorAll('button[data-key]').forEach(b=>b.addEventListener('click',()=>send({type:'key',action:b.dataset.key})));
+  function sendText(){ if(txtEl.value){ send({type:'text',value:txtEl.value}); txtEl.value=''; } }
+  document.getElementById('sendTxt').addEventListener('click',sendText);
+  txtEl.addEventListener('keydown',e=>{ if(e.key==='Enter') sendText(); });
+  document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>{
+    document.querySelectorAll('nav a').forEach(x=>x.classList.remove('on')); a.classList.add('on');
+    document.querySelector('.top h1').textContent=a.textContent.trim();
+  }));
+  connect();
+
+  // --- status perangkat (baterai / lokasi / info) ---
+  const devName=document.getElementById('devName'),
+        batt=document.getElementById('batt'),
+        battBar=document.getElementById('battBar'),
+        battInfo=document.getElementById('battInfo'),
+        locInfo=document.getElementById('locInfo');
+  async function poll(){
+    try{
+      const r=await fetch('/status',{cache:'no-store'});
+      const s=await r.json();
+      if(s.device) devName.textContent=s.device;
+      if(typeof s.battery==='number' && s.battery>=0){
+        batt.innerHTML=s.battery+'<span>%</span>';
+        battBar.style.width=s.battery+'%';
+        battInfo.textContent=(s.charging?'Sedang mengisi':'Tidak mengisi')
+          +(s.android?' • Android '+s.android:'');
+      }
+      if(s.location){
+        const la=s.location.lat.toFixed(5), lo=s.location.lon.toFixed(5);
+        locInfo.innerHTML='Terakhir: '+la+', '+lo+' (±'+Math.round(s.location.acc)+'m) — '
+          +'<a href="https://maps.google.com/?q='+s.location.lat+','+s.location.lon
+          +'" target="_blank" rel="noopener" style="color:var(--acc)">Buka Maps</a>';
+      } else if(s.locPerm===false){
+        locInfo.textContent='Izin lokasi belum diberikan di perangkat.';
+      } else {
+        locInfo.textContent='Menunggu fix lokasi…';
+      }
+    }catch(e){}
+    setTimeout(poll,5000);
+  }
+  poll();
+
+  // --- notifikasi ---
+  function esc(s){ return (s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+  const notifFeed=document.getElementById('notifFeed');
+  async function pollNotif(){
+    try{
+      const r=await fetch('/notifications',{cache:'no-store'}); const arr=await r.json();
+      if(Array.isArray(arr)){
+        if(arr.length===0){
+          notifFeed.innerHTML='<div class="empty">Belum ada notifikasi. Aktifkan "Akses notifikasi" di app kiko, lalu tunggu notifikasi masuk.</div>';
+        }else{
+          notifFeed.innerHTML=arr.slice(0,25).map(n=>{
+            const t=new Date(n.time).toLocaleTimeString();
+            const ini=esc((n.app||'?').trim().slice(0,1).toUpperCase());
+            return '<div class="row"><div class="ic">'+ini+'</div>'
+              +'<div style="min-width:0"><b>'+esc(n.title||n.app)+'</b>'
+              +'<small>'+esc(n.text||'')+' · '+esc(n.app)+' · '+t+'</small></div></div>';
+          }).join('');
+        }
+      }
+    }catch(e){}
+    setTimeout(pollNotif,4000);
+  }
+  pollNotif();
+
+  // --- kamera ---
+  const camImg=document.getElementById('camImg'), camInfo=document.getElementById('camInfo');
+  let camUrl=null;
+  async function snap(which){
+    camInfo.textContent='Mengambil foto '+which+'…';
+    try{
+      const r=await fetch('/camera?cam='+which,{cache:'no-store'});
+      if(!r.ok){ camInfo.textContent='Gagal: '+(await r.text()); return; }
+      const b=await r.blob(); if(camUrl)URL.revokeObjectURL(camUrl);
+      camUrl=URL.createObjectURL(b); camImg.src=camUrl; camImg.style.display='block';
+      camInfo.textContent='Snapshot '+which+' · '+new Date().toLocaleTimeString();
+    }catch(e){ camInfo.textContent='Gagal mengambil foto.'; }
+  }
+  document.getElementById('camBack').addEventListener('click',()=>snap('back'));
+  document.getElementById('camFront').addEventListener('click',()=>snap('front'));
+
+  // --- screen time ---
+  const usageList=document.getElementById('usageList');
+  function fmtDur(ms){ const m=Math.round(ms/60000); if(m<1) return '<1 mnt'; if(m<60) return m+' mnt'; return Math.floor(m/60)+' j '+(m%60)+' m'; }
+  async function pollUsage(){
+    try{
+      const r=await fetch('/usage',{cache:'no-store'}); const a=await r.json();
+      if(!Array.isArray(a)||a.length===0){
+        usageList.innerHTML='<div class="empty">Aktifkan "Usage access" di app kiko untuk lihat screen time.</div>';
+      }else{
+        usageList.innerHTML=a.slice(0,8).map(x=>'<div class="row"><div class="ic">'+esc((x.app||'?').trim().slice(0,1).toUpperCase())+'</div><div style="min-width:0"><b>'+esc(x.app)+'</b><small>'+fmtDur(x.ms)+' · hari ini</small></div></div>').join('');
+      }
+    }catch(e){}
+    setTimeout(pollUsage,15000);
+  }
+  pollUsage();
+
+  // --- perintah ---
+  const appSel=document.getElementById('appSel'), cmdInfo=document.getElementById('cmdInfo'), msgIn=document.getElementById('msgIn');
+  async function loadApps(){ try{ const r=await fetch('/apps'); const a=await r.json();
+    if(Array.isArray(a)) appSel.innerHTML=a.map(x=>'<option value="'+esc(x.pkg)+'">'+esc(x.app)+'</option>').join(''); }catch(e){} }
+  async function doCmd(q,label){ cmdInfo.textContent=label+'…';
+    try{ const r=await fetch('/cmd?'+q); const j=await r.json(); cmdInfo.textContent=label+(j.ok?' — berhasil':' — gagal (cek izin Accessibility)'); }
+    catch(e){ cmdInfo.textContent=label+' — gagal'; } }
+  document.getElementById('cmdLock').addEventListener('click',()=>doCmd('do=lock','Kunci HP'));
+  document.getElementById('cmdOpen').addEventListener('click',()=>{ if(appSel.value) doCmd('do=open&pkg='+encodeURIComponent(appSel.value),'Buka app'); });
+  document.getElementById('cmdMsg').addEventListener('click',()=>{ if(msgIn.value){ doCmd('do=message&text='+encodeURIComponent(msgIn.value),'Kirim pesan'); msgIn.value=''; } });
+  loadApps();
+})();
+</script>
+</body>
+</html>

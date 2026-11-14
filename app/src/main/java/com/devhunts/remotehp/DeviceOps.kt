@@ -23,7 +23,7 @@ object DeviceOps {
             val usm = ctx.getSystemService(Context.USAGE_STATS_SERVICE) as UsageStatsManager
             val end = System.currentTimeMillis()
             val start = end - 24L * 60 * 60 * 1000
-            val stats = usm.queryUsageStats(UsageStatsManager.INTERVAL_DAY, start, end) ?: emptyList()
+            val stats = usm.queryUsageStats(UsageStatsManager.INTERVAL_DAILY, start, end) ?: emptyList()
             val agg = HashMap<String, Long>()
             for (s in stats) if (s.totalTimeInForeground > 0)
                 agg[s.packageName] = (agg[s.packageName] ?: 0L) + s.totalTimeInForeground

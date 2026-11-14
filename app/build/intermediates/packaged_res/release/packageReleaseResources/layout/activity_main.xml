@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="kiko"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:paddingBottom="12dp" />
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Status: berhenti"
+            android:paddingBottom="16dp" />
+
+        <Button
+            android:id="@+id/btnAccessibility"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1. Aktifkan Accessibility" />
+
+        <Button
+            android:id="@+id/btnNotif"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1b. Izinkan Akses Notifikasi" />
+
+        <Button
+            android:id="@+id/btnUsage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1c. Izinkan Usage Access (screen time)" />
+
+        <Button
+            android:id="@+id/btnStart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2. Mulai + Izinkan Rekam Layar" />
+
+        <Button
+            android:id="@+id/btnStop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Stop" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Alamat akses dari desktop (buka di browser):"
+            android:paddingTop="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/addr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:textIsSelectable="true"
+            android:paddingTop="6dp"
+            android:fontFamily="monospace" />
+    </LinearLayout>
+</ScrollView>

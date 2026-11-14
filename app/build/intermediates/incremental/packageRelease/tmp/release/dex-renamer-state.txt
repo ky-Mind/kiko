@@ -1,0 +1,4 @@
+#Sat Nov 14 17:16:10 WIB 2026
+base.0=/home/kymind/projects/remote-hp/app/build/intermediates/dex/release/mergeDexRelease/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

@@ -9,3 +9,7 @@
 .cxx/
 *.apk
 !app/release/*.apk
+
+# signing (rahasia, jangan di-commit)
+keystore.properties
+*.jks
