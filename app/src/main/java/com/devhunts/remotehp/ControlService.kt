@@ -60,11 +60,11 @@ class ControlService : Service() {
         val channelId = "remotehp"
         val nm = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         if (Build.VERSION.SDK_INT >= 26) {
-            val ch = NotificationChannel(channelId, "pucupucu", NotificationManager.IMPORTANCE_LOW)
+            val ch = NotificationChannel(channelId, "kiko", NotificationManager.IMPORTANCE_LOW)
             nm.createNotificationChannel(ch)
         }
         val notif: Notification = Notification.Builder(this, channelId)
-            .setContentTitle("pucupucu aktif")
+            .setContentTitle("kiko aktif")
             .setContentText("Perangkat ini bisa dikendalikan dari jarak jauh.")
             .setSmallIcon(android.R.drawable.ic_menu_view)
             .setOngoing(true)

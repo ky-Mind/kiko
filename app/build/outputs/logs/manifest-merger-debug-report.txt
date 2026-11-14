@@ -234,7 +234,7 @@ ADDED from [androidx.core:core:1.13.0] /home/kymind/.gradle/caches/8.14.3/transf
 		ADDED from [androidx.core:core:1.13.0] /home/kymind/.gradle/caches/8.14.3/transforms/35493b4ccd3f511aa2135b51f52c566f/transformed/core-1.13.0/AndroidManifest.xml:24:9-44
 	android:name
 		ADDED from [androidx.core:core:1.13.0] /home/kymind/.gradle/caches/8.14.3/transforms/35493b4ccd3f511aa2135b51f52c566f/transformed/core-1.13.0/AndroidManifest.xml:23:9-81
-permission#com.devhunts.pucupucu.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+permission#com.devhunts.kiko.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.13.0] /home/kymind/.gradle/caches/8.14.3/transforms/35493b4ccd3f511aa2135b51f52c566f/transformed/core-1.13.0/AndroidManifest.xml:22:5-24:47
 	android:protectionLevel
 		ADDED from [androidx.core:core:1.13.0] /home/kymind/.gradle/caches/8.14.3/transforms/35493b4ccd3f511aa2135b51f52c566f/transformed/core-1.13.0/AndroidManifest.xml:24:9-44
@@ -244,7 +244,7 @@ uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.13.0] /home/kymind/.gradle/caches/8.14.3/transforms/35493b4ccd3f511aa2135b51f52c566f/transformed/core-1.13.0/AndroidManifest.xml:26:5-97
 	android:name
 		ADDED from [androidx.core:core:1.13.0] /home/kymind/.gradle/caches/8.14.3/transforms/35493b4ccd3f511aa2135b51f52c566f/transformed/core-1.13.0/AndroidManifest.xml:26:22-94
-uses-permission#com.devhunts.pucupucu.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+uses-permission#com.devhunts.kiko.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.13.0] /home/kymind/.gradle/caches/8.14.3/transforms/35493b4ccd3f511aa2135b51f52c566f/transformed/core-1.13.0/AndroidManifest.xml:26:5-97
 	android:name
 		ADDED from [androidx.core:core:1.13.0] /home/kymind/.gradle/caches/8.14.3/transforms/35493b4ccd3f511aa2135b51f52c566f/transformed/core-1.13.0/AndroidManifest.xml:26:22-94

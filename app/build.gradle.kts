@@ -8,7 +8,7 @@ android {
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.devhunts.pucupucu"
+        applicationId = "com.devhunts.kiko"
         minSdk = 26
         targetSdk = 36
         versionCode = 1

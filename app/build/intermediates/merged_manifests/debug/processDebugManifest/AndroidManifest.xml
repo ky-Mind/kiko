@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.devhunts.pucupucu"
+    package="com.devhunts.kiko"
     android:versionCode="1"
     android:versionName="0.1" >
 
@@ -16,10 +16,10 @@
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <permission
-        android:name="com.devhunts.pucupucu.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+        android:name="com.devhunts.kiko.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
         android:protectionLevel="signature" />
 
-    <uses-permission android:name="com.devhunts.pucupucu.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+    <uses-permission android:name="com.devhunts.kiko.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
 
     <application
         android:allowBackup="false"
@@ -60,7 +60,7 @@
 
         <provider
             android:name="androidx.startup.InitializationProvider"
-            android:authorities="com.devhunts.pucupucu.androidx-startup"
+            android:authorities="com.devhunts.kiko.androidx-startup"
             android:exported="false" >
             <meta-data
                 android:name="androidx.emoji2.text.EmojiCompatInitializer"

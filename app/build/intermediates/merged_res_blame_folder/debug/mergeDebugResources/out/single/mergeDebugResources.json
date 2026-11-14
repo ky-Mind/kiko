@@ -1,9 +1,5 @@
 [
     {
-        "merged": "com.devhunts.remotehp.app-debug-23:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "com.devhunts.remotehp.app-main-25:/mipmap-xxxhdpi/ic_launcher_round.png"
-    },
-    {
         "merged": "com.devhunts.remotehp.app-debug-23:/layout_activity_main.xml.flat",
         "source": "com.devhunts.remotehp.app-main-25:/layout/activity_main.xml"
     },
@@ -12,11 +8,15 @@
         "source": "/home/kymind/.gradle/daemon/8.14.3/com.devhunts.remotehp.app-main-25:/xml/accessibility_config.xml"
     },
     {
-        "merged": "com.devhunts.remotehp.app-debug-23:/mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "com.devhunts.remotehp.app-main-25:/mipmap-xxxhdpi/ic_launcher.png"
+        "merged": "/home/kymind/.gradle/daemon/8.14.3/com.devhunts.remotehp.app-debug-23:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "/home/kymind/.gradle/daemon/8.14.3/com.devhunts.remotehp.app-main-25:/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
         "merged": "/home/kymind/.gradle/daemon/8.14.3/com.devhunts.remotehp.app-debug-23:/layout_activity_main.xml.flat",
         "source": "/home/kymind/.gradle/daemon/8.14.3/com.devhunts.remotehp.app-main-25:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/home/kymind/.gradle/daemon/8.14.3/com.devhunts.remotehp.app-debug-23:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "/home/kymind/.gradle/daemon/8.14.3/com.devhunts.remotehp.app-main-25:/mipmap-xxxhdpi/ic_launcher_round.png"
     }
 ]
