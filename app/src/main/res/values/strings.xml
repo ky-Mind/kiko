@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Remote HP</string>
+    <string name="accessibility_desc">Mengizinkan kontrol sentuhan jarak jauh (tap, geser, ketik) untuk perangkat milik Anda sendiri.</string>
+</resources>

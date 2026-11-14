@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Remote HP</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #0e0e11; color: #e8e8ea;
+         font-family: system-ui, sans-serif; height: 100vh;
+         display: flex; flex-direction: column; align-items: center; }
+  .bar { display: flex; gap: 8px; padding: 10px; flex-wrap: wrap;
+         align-items: center; width: 100%; max-width: 900px; justify-content: center; }
+  button { padding: 9px 14px; background: #23232a; color: #e8e8ea;
+           border: 1px solid #3a3a44; border-radius: 8px; cursor: pointer; font-size: 14px; }
+  button:hover { background: #2e2e37; }
+  input { padding: 9px; background: #1a1a20; color: #e8e8ea;
+          border: 1px solid #3a3a44; border-radius: 8px; flex: 1; min-width: 120px; }
+  #stat { font-size: 13px; opacity: .8; margin-left: auto; }
+  #wrap { flex: 1; display: flex; align-items: center; justify-content: center;
+          width: 100%; overflow: hidden; padding: 8px; }
+  #screen { max-width: 100%; max-height: 100%; border: 1px solid #2a2a33;
+            border-radius: 10px; cursor: crosshair; touch-action: none;
+            background: #000; user-select: none; }
+</style>
+</head>
+<body>
+  <div class="bar">
+    <button data-key="back">◀ Back</button>
+    <button data-key="home">● Home</button>
+    <button data-key="recents">■ Recents</button>
+    <button data-key="notifications">🔔 Notif</button>
+    <input id="txt" placeholder="ketik teks lalu Enter / Kirim">
+    <button id="sendTxt">Kirim</button>
+    <span id="stat">menyambung…</span>
+  </div>
+  <div id="wrap"><img id="screen" alt="layar hp"></div>
+
+<script>
+(function () {
+  const img = document.getElementById('screen');
+  const statEl = document.getElementById('stat');
+  const txtEl = document.getElementById('txt');
+  let ws = null, drag = null, lastUrl = null;
+
+  function connect() {
+    ws = new WebSocket('ws://' + location.host + '/');
+    ws.binaryType = 'blob';
+    ws.onopen = () => statEl.textContent = 'tersambung';
+    ws.onclose = () => { statEl.textContent = 'terputus, mencoba lagi…'; setTimeout(connect, 1500); };
+    ws.onerror = () => { try { ws.close(); } catch (e) {} };
+    ws.onmessage = (e) => {
+      if (e.data instanceof Blob) {
+        const url = URL.createObjectURL(e.data);
+        img.src = url;
+        if (lastUrl) URL.revokeObjectURL(lastUrl);
+        lastUrl = url;
+      }
+    };
+  }
+
+  function send(obj) {
+    if (ws && ws.readyState === 1) ws.send(JSON.stringify(obj));
+  }
+
+  function norm(ev) {
+    const r = img.getBoundingClientRect();
+    return {
+      x: Math.min(1, Math.max(0, (ev.clientX - r.left) / r.width)),
+      y: Math.min(1, Math.max(0, (ev.clientY - r.top) / r.height))
+    };
+  }
+
+  img.addEventListener('mousedown', (e) => { drag = Object.assign(norm(e), { t: Date.now() }); e.preventDefault(); });
+  img.addEventListener('mouseup', (e) => {
+    if (!drag) return;
+    const p = norm(e), dt = Date.now() - drag.t;
+    const dist = Math.hypot(p.x - drag.x, p.y - drag.y);
+    if (dist < 0.02) send({ type: 'tap', x: p.x, y: p.y });
+    else send({ type: 'swipe', x1: drag.x, y1: drag.y, x2: p.x, y2: p.y, ms: Math.max(60, Math.min(dt, 1200)) });
+    drag = null;
+  });
+
+  document.querySelectorAll('button[data-key]').forEach((b) =>
+    b.addEventListener('click', () => send({ type: 'key', action: b.dataset.key })));
+
+  function sendText() { if (txtEl.value) { send({ type: 'text', value: txtEl.value }); txtEl.value = ''; } }
+  document.getElementById('sendTxt').addEventListener('click', sendText);
+  txtEl.addEventListener('keydown', (e) => { if (e.key === 'Enter') sendText(); });
+
+  connect();
+})();
+</script>
+</body>
+</html>
