@@ -12,12 +12,19 @@ import java.util.Collections
  */
 class WebServer(
     port: Int,
-    private val dashboardHtml: ByteArray
+    private val dashboardHtml: ByteArray,
+    private val status: StatusProvider? = null
 ) : NanoWSD(port) {
 
     private val clients = Collections.synchronizedSet(mutableSetOf<Client>())
 
     override fun serveHttp(session: IHTTPSession): Response {
+        if (session.uri == "/status") {
+            val json = status?.json() ?: "{}"
+            val r = newFixedLengthResponse(Response.Status.OK, "application/json", json)
+            r.addHeader("Cache-Control", "no-store")
+            return r
+        }
         return newFixedLengthResponse(
             Response.Status.OK,
             "text/html",

@@ -19,6 +19,7 @@ class ControlService : Service() {
 
     private var capturer: ScreenCapturer? = null
     private var server: WebServer? = null
+    private var status: StatusProvider? = null
     private var mediaProjection: MediaProjection? = null
     private var wakeLock: PowerManager.WakeLock? = null
 
@@ -51,7 +52,8 @@ class ControlService : Service() {
     private fun startServer() {
         if (server != null) return
         val html = assets.open("dashboard.html").readBytes()
-        server = WebServer(PORT, html).also {
+        status = StatusProvider(this).also { it.start() }
+        server = WebServer(PORT, html, status).also {
             it.start(NanoHTTPD.SOCKET_READ_TIMEOUT, false)
         }
     }
@@ -93,6 +95,8 @@ class ControlService : Service() {
         mediaProjection = null
         server?.stop()
         server = null
+        status?.stop()
+        status = null
         wakeLock?.let { if (it.isHeld) it.release() }
         wakeLock = null
         super.onDestroy()

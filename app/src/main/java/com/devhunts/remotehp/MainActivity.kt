@@ -37,6 +37,9 @@ class MainActivity : AppCompatActivity() {
     private val notifLauncher =
         registerForActivityResult(ActivityResultContracts.RequestPermission()) { }
 
+    private val locLauncher =
+        registerForActivityResult(ActivityResultContracts.RequestPermission()) { }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -47,6 +50,7 @@ class MainActivity : AppCompatActivity() {
         if (Build.VERSION.SDK_INT >= 33) {
             notifLauncher.launch(android.Manifest.permission.POST_NOTIFICATIONS)
         }
+        locLauncher.launch(android.Manifest.permission.ACCESS_FINE_LOCATION)
 
         findViewById<Button>(R.id.btnAccessibility).setOnClickListener {
             startActivity(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))

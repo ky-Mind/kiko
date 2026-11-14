@@ -144,7 +144,7 @@
 
       <div class="cards">
         <section class="panel">
-          <div class="hd"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="18" height="10" rx="2"/><line x1="22" y1="11" x2="22" y2="13"/></svg> Baterai <span class="tag">SEGERA</span></div>
+          <div class="hd"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="18" height="10" rx="2"/><line x1="22" y1="11" x2="22" y2="13"/></svg> Baterai <span class="tag">LIVE</span></div>
           <div class="bd">
             <div class="kpi" id="batt">—<span>%</span></div>
             <div class="track"><i id="battBar" style="width:0%"></i></div>
@@ -153,10 +153,10 @@
         </section>
 
         <section class="panel">
-          <div class="hd"><svg viewBox="0 0 24 24"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> Lokasi <span class="tag">SEGERA</span></div>
+          <div class="hd"><svg viewBox="0 0 24 24"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> Lokasi <span class="tag">LIVE</span></div>
           <div class="bd">
             <div class="map"><div class="mk"></div></div>
-            <div class="sub">Riwayat lokasi &amp; area aman.</div>
+            <div class="sub" id="locInfo">Menunggu fix lokasi…</div>
           </div>
         </section>
 
@@ -210,6 +210,38 @@
     document.querySelector('.top h1').textContent=a.textContent.trim();
   }));
   connect();
+
+  // --- status perangkat (baterai / lokasi / info) ---
+  const devName=document.getElementById('devName'),
+        batt=document.getElementById('batt'),
+        battBar=document.getElementById('battBar'),
+        battInfo=document.getElementById('battInfo'),
+        locInfo=document.getElementById('locInfo');
+  async function poll(){
+    try{
+      const r=await fetch('/status',{cache:'no-store'});
+      const s=await r.json();
+      if(s.device) devName.textContent=s.device;
+      if(typeof s.battery==='number' && s.battery>=0){
+        batt.innerHTML=s.battery+'<span>%</span>';
+        battBar.style.width=s.battery+'%';
+        battInfo.textContent=(s.charging?'Sedang mengisi':'Tidak mengisi')
+          +(s.android?' • Android '+s.android:'');
+      }
+      if(s.location){
+        const la=s.location.lat.toFixed(5), lo=s.location.lon.toFixed(5);
+        locInfo.innerHTML='Terakhir: '+la+', '+lo+' (±'+Math.round(s.location.acc)+'m) — '
+          +'<a href="https://maps.google.com/?q='+s.location.lat+','+s.location.lon
+          +'" target="_blank" rel="noopener" style="color:var(--acc)">Buka Maps</a>';
+      } else if(s.locPerm===false){
+        locInfo.textContent='Izin lokasi belum diberikan di perangkat.';
+      } else {
+        locInfo.textContent='Menunggu fix lokasi…';
+      }
+    }catch(e){}
+    setTimeout(poll,5000);
+  }
+  poll();
 })();
 </script>
 </body>
