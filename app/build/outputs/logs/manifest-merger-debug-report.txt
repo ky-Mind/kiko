@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:2:1-47:12
-INJECTED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:2:1-47:12
-INJECTED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:2:1-47:12
-INJECTED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:2:1-47:12
+ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:2:1-60:12
+INJECTED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:2:1-60:12
+INJECTED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:2:1-60:12
+INJECTED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:2:1-60:12
 MERGED from [androidx.appcompat:appcompat-resources:1.7.0] /home/kymind/.gradle/caches/8.14.3/transforms/49bc9e3d5abd1ff1249a8e8f50d31096/transformed/appcompat-resources-1.7.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.appcompat:appcompat:1.7.0] /home/kymind/.gradle/caches/8.14.3/transforms/7e9df046870a1ce2d33f7db48271445c/transformed/appcompat-1.7.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.fragment:fragment:1.5.4] /home/kymind/.gradle/caches/8.14.3/transforms/b22c563c534e2084b060dbea55651d06/transformed/fragment-1.5.4/AndroidManifest.xml:17:1-24:12
@@ -73,9 +73,23 @@ uses-permission#android.permission.ACCESS_COARSE_LOCATION
 ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:11:5-81
 	android:name
 		ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:11:22-78
+uses-permission#android.permission.CAMERA
+ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:12:5-65
+	android:name
+		ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:12:22-62
+uses-permission#android.permission.FOREGROUND_SERVICE_CAMERA
+ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:13:5-84
+	android:name
+		ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:13:22-81
+uses-feature#android.hardware.camera.any
+ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:14:5-89
+	android:required
+		ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:14:62-86
+	android:name
+		ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:14:19-61
 application
-ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:13:5-46:19
-INJECTED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:13:5-46:19
+ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:16:5-59:19
+INJECTED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:16:5-59:19
 MERGED from [androidx.emoji2:emoji2:1.3.0] /home/kymind/.gradle/caches/8.14.3/transforms/3b6c150766052c617ae6d19d07223941/transformed/emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.emoji2:emoji2:1.3.0] /home/kymind/.gradle/caches/8.14.3/transforms/3b6c150766052c617ae6d19d07223941/transformed/emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.core:core:1.13.0] /home/kymind/.gradle/caches/8.14.3/transforms/35493b4ccd3f511aa2135b51f52c566f/transformed/core-1.13.0/AndroidManifest.xml:28:5-89
@@ -93,61 +107,77 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] /home/kymind/.gradle/caches
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.13.0] /home/kymind/.gradle/caches/8.14.3/transforms/35493b4ccd3f511aa2135b51f52c566f/transformed/core-1.13.0/AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:18:9-35
+		ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:21:9-35
 	android:label
-		ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:17:9-41
+		ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:20:9-41
 	android:roundIcon
-		ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:16:9-54
+		ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:19:9-54
 	android:icon
-		ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:15:9-43
+		ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:18:9-43
 	android:allowBackup
-		ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:14:9-36
+		ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:17:9-36
 	android:theme
-		ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:19:9-56
+		ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:22:9-56
 activity#com.devhunts.remotehp.MainActivity
-ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:21:9-28:20
+ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:24:9-31:20
 	android:exported
-		ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:23:13-36
+		ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:26:13-36
 	android:name
-		ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:22:13-41
+		ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:25:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:24:13-27:29
+ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:27:13-30:29
 action#android.intent.action.MAIN
-ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:25:17-69
+ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:28:17-69
 	android:name
-		ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:25:25-66
+		ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:28:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:26:17-77
+ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:29:17-77
 	android:name
-		ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:26:27-74
+		ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:29:27-74
 service#com.devhunts.remotehp.ControlService
-ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:30:9-33:63
+ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:33:9-36:70
 	android:exported
-		ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:32:13-37
+		ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:35:13-37
 	android:foregroundServiceType
-		ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:33:13-60
+		ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:36:13-67
 	android:name
-		ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:31:13-43
+		ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:34:13-43
 service#com.devhunts.remotehp.InputAccessibilityService
-ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:35:9-45:19
+ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:38:9-48:19
 	android:exported
-		ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:37:13-37
+		ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:40:13-37
 	android:permission
-		ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:38:13-79
+		ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:41:13-79
 	android:name
-		ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:36:13-54
+		ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:39:13-54
 intent-filter#action:name:android.accessibilityservice.AccessibilityService
-ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:39:13-41:29
+ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:42:13-44:29
 action#android.accessibilityservice.AccessibilityService
-ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:40:17-92
+ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:43:17-92
 	android:name
-		ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:40:25-89
+		ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:43:25-89
 meta-data#android.accessibilityservice
-ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:42:13-44:64
+ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:45:13-47:64
 	android:resource
-		ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:44:17-61
+		ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:47:17-61
 	android:name
-		ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:43:17-60
+		ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:46:17-60
+service#com.devhunts.remotehp.NotifListener
+ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:50:9-58:19
+	android:label
+		ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:53:13-45
+	android:exported
+		ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:52:13-37
+	android:permission
+		ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:54:13-87
+	android:name
+		ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:51:13-42
+intent-filter#action:name:android.service.notification.NotificationListenerService
+ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:55:13-57:29
+action#android.service.notification.NotificationListenerService
+ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:56:17-99
+	android:name
+		ADDED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml:56:25-96
 uses-sdk
 INJECTED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/kymind/projects/remote-hp/app/src/main/AndroidManifest.xml

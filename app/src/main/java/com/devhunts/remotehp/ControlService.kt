@@ -1,5 +1,6 @@
 package com.devhunts.remotehp
 
+import android.Manifest
 import android.app.Activity
 import android.app.Notification
 import android.app.NotificationChannel
@@ -7,12 +8,14 @@ import android.app.NotificationManager
 import android.app.Service
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.content.pm.ServiceInfo
 import android.media.projection.MediaProjection
 import android.media.projection.MediaProjectionManager
 import android.os.Build
 import android.os.IBinder
 import android.os.PowerManager
+import androidx.core.content.ContextCompat
 import fi.iki.elonen.NanoHTTPD
 
 class ControlService : Service() {
@@ -53,7 +56,7 @@ class ControlService : Service() {
         if (server != null) return
         val html = assets.open("dashboard.html").readBytes()
         status = StatusProvider(this).also { it.start() }
-        server = WebServer(PORT, html, status).also {
+        server = WebServer(PORT, html, status, applicationContext).also {
             it.start(NanoHTTPD.SOCKET_READ_TIMEOUT, false)
         }
     }
@@ -73,7 +76,12 @@ class ControlService : Service() {
             .build()
 
         if (Build.VERSION.SDK_INT >= 29) {
-            startForeground(1, notif, ServiceInfo.FOREGROUND_SERVICE_TYPE_MEDIA_PROJECTION)
+            var type = ServiceInfo.FOREGROUND_SERVICE_TYPE_MEDIA_PROJECTION
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
+                == PackageManager.PERMISSION_GRANTED) {
+                type = type or ServiceInfo.FOREGROUND_SERVICE_TYPE_CAMERA
+            }
+            startForeground(1, notif, type)
         } else {
             startForeground(1, notif)
         }

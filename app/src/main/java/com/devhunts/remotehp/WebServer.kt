@@ -1,5 +1,6 @@
 package com.devhunts.remotehp
 
+import android.content.Context
 import fi.iki.elonen.NanoHTTPD
 import fi.iki.elonen.NanoWSD
 import java.io.ByteArrayInputStream
@@ -13,7 +14,8 @@ import java.util.Collections
 class WebServer(
     port: Int,
     private val dashboardHtml: ByteArray,
-    private val status: StatusProvider? = null
+    private val status: StatusProvider? = null,
+    private val appCtx: Context? = null
 ) : NanoWSD(port) {
 
     private val clients = Collections.synchronizedSet(mutableSetOf<Client>())
@@ -24,6 +26,23 @@ class WebServer(
             val r = newFixedLengthResponse(Response.Status.OK, "application/json", json)
             r.addHeader("Cache-Control", "no-store")
             return r
+        }
+        if (session.uri == "/notifications") {
+            val r = newFixedLengthResponse(Response.Status.OK, "application/json", NotifStore.json())
+            r.addHeader("Cache-Control", "no-store")
+            return r
+        }
+        if (session.uri == "/camera") {
+            val back = (session.parameters["cam"]?.firstOrNull() ?: "back") != "front"
+            val bytes = CameraSnap.capture(appCtx, back)
+            return if (bytes != null) {
+                val r = newFixedLengthResponse(Response.Status.OK, "image/jpeg",
+                    ByteArrayInputStream(bytes), bytes.size.toLong())
+                r.addHeader("Cache-Control", "no-store"); r
+            } else {
+                newFixedLengthResponse(Response.Status.INTERNAL_ERROR, "text/plain",
+                    "kamera tidak tersedia / izin belum diberikan")
+            }
         }
         return newFixedLengthResponse(
             Response.Status.OK,

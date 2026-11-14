@@ -161,17 +161,24 @@
         </section>
 
         <section class="panel" style="grid-column:1/-1">
-          <div class="hd"><svg viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 7 3 9H3c0-2 3-2 3-9z"/><path d="M10 21a2 2 0 0 0 4 0"/></svg> Notifikasi masuk <span class="tag">SEGERA</span></div>
+          <div class="hd"><svg viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 7 3 9H3c0-2 3-2 3-9z"/><path d="M10 21a2 2 0 0 0 4 0"/></svg> Notifikasi masuk <span class="tag">LIVE</span></div>
           <div class="bd">
-            <div class="list">
-              <div class="empty">Feed notifikasi perangkat akan tampil di sini setelah fitur diaktifkan.</div>
+            <div class="list" id="notifFeed">
+              <div class="empty">Menunggu notifikasi… aktifkan "Akses notifikasi" di app kiko.</div>
             </div>
           </div>
         </section>
 
         <section class="panel">
-          <div class="hd"><svg viewBox="0 0 24 24"><path d="M3 7h3l2-2h8l2 2h3v12H3z"/><circle cx="12" cy="13" r="3.5"/></svg> Kamera <span class="tag">SEGERA</span></div>
-          <div class="bd"><div class="sub">Snapshot &amp; live kamera jarak jauh.</div></div>
+          <div class="hd"><svg viewBox="0 0 24 24"><path d="M3 7h3l2-2h8l2 2h3v12H3z"/><circle cx="12" cy="13" r="3.5"/></svg> Kamera <span class="tag">LIVE</span></div>
+          <div class="bd">
+            <div class="ctl" style="margin-top:0;margin-bottom:10px">
+              <button id="camBack">Belakang</button>
+              <button id="camFront">Depan</button>
+            </div>
+            <img id="camImg" alt="" style="width:100%;border-radius:8px;border:1px solid var(--line);display:none;margin-bottom:8px">
+            <div class="sub" id="camInfo">Ambil snapshot kamera (butuh izin kamera di app).</div>
+          </div>
         </section>
 
         <section class="panel">
@@ -242,6 +249,46 @@
     setTimeout(poll,5000);
   }
   poll();
+
+  // --- notifikasi ---
+  function esc(s){ return (s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+  const notifFeed=document.getElementById('notifFeed');
+  async function pollNotif(){
+    try{
+      const r=await fetch('/notifications',{cache:'no-store'}); const arr=await r.json();
+      if(Array.isArray(arr)){
+        if(arr.length===0){
+          notifFeed.innerHTML='<div class="empty">Belum ada notifikasi. Aktifkan "Akses notifikasi" di app kiko, lalu tunggu notifikasi masuk.</div>';
+        }else{
+          notifFeed.innerHTML=arr.slice(0,25).map(n=>{
+            const t=new Date(n.time).toLocaleTimeString();
+            const ini=esc((n.app||'?').trim().slice(0,1).toUpperCase());
+            return '<div class="row"><div class="ic">'+ini+'</div>'
+              +'<div style="min-width:0"><b>'+esc(n.title||n.app)+'</b>'
+              +'<small>'+esc(n.text||'')+' · '+esc(n.app)+' · '+t+'</small></div></div>';
+          }).join('');
+        }
+      }
+    }catch(e){}
+    setTimeout(pollNotif,4000);
+  }
+  pollNotif();
+
+  // --- kamera ---
+  const camImg=document.getElementById('camImg'), camInfo=document.getElementById('camInfo');
+  let camUrl=null;
+  async function snap(which){
+    camInfo.textContent='Mengambil foto '+which+'…';
+    try{
+      const r=await fetch('/camera?cam='+which,{cache:'no-store'});
+      if(!r.ok){ camInfo.textContent='Gagal: '+(await r.text()); return; }
+      const b=await r.blob(); if(camUrl)URL.revokeObjectURL(camUrl);
+      camUrl=URL.createObjectURL(b); camImg.src=camUrl; camImg.style.display='block';
+      camInfo.textContent='Snapshot '+which+' · '+new Date().toLocaleTimeString();
+    }catch(e){ camInfo.textContent='Gagal mengambil foto.'; }
+  }
+  document.getElementById('camBack').addEventListener('click',()=>snap('back'));
+  document.getElementById('camFront').addEventListener('click',()=>snap('front'));
 })();
 </script>
 </body>

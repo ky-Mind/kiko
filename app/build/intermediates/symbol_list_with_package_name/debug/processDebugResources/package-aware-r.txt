@@ -706,6 +706,7 @@ id beginning
 id blocking
 id bottom
 id btnAccessibility
+id btnNotif
 id btnStart
 id btnStop
 id buttonPanel

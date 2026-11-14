@@ -40,6 +40,9 @@ class MainActivity : AppCompatActivity() {
     private val locLauncher =
         registerForActivityResult(ActivityResultContracts.RequestPermission()) { }
 
+    private val camLauncher =
+        registerForActivityResult(ActivityResultContracts.RequestPermission()) { }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -51,9 +54,14 @@ class MainActivity : AppCompatActivity() {
             notifLauncher.launch(android.Manifest.permission.POST_NOTIFICATIONS)
         }
         locLauncher.launch(android.Manifest.permission.ACCESS_FINE_LOCATION)
+        camLauncher.launch(android.Manifest.permission.CAMERA)
 
         findViewById<Button>(R.id.btnAccessibility).setOnClickListener {
             startActivity(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))
+        }
+
+        findViewById<Button>(R.id.btnNotif).setOnClickListener {
+            startActivity(Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS))
         }
 
         findViewById<Button>(R.id.btnStart).setOnClickListener {

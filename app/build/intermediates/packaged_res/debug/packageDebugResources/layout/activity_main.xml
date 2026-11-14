@@ -31,6 +31,12 @@
             android:text="1. Aktifkan Accessibility" />
 
         <Button
+            android:id="@+id/btnNotif"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1b. Izinkan Akses Notifikasi" />
+
+        <Button
             android:id="@+id/btnStart"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
